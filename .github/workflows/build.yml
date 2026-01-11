@@ -13,4 +13,4 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
       - name: Build
-        uses: make build
+        run: make build
