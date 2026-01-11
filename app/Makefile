@@ -1,14 +1,14 @@
-build: run-checkstyle run-test install
+build: lint test install
 
 install:
 	./gradlew clean
 	./gradlew installDist
 
-run-checkstyle:
+lint:
 	./gradlew checkstyleMain
-	./gradlew checkstyleMain
+	./gradlew checkstyleTest
 
-run-test:
+test:
 	./gradlew test
 
 run-dist:
@@ -19,3 +19,4 @@ run-dist-example:
 
 .PHONY:
 	build
+	test
