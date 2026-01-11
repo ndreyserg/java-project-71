@@ -9,4 +9,4 @@
 ## Демо
 
 ### Сравнение плоских файлов
-![demo](https://github.com/ndreyserg/java-project-71/tree/main/assests/demo-simple-json.gif)
+![demo](https://github.com/ndreyserg/java-project-71/blob/main/assets/demo-simple-json.gif)
