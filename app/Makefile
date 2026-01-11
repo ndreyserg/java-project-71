@@ -14,8 +14,8 @@ test:
 run-dist:
 	./build/install/app/bin/app
 
-run-dist-example:
-	./gradlew run --args="src/test/resources/fixtures/file1.json  src/test/fixtures/resources/file2.json"
+run-example:
+	./gradlew run --args="src/test/resources/fixtures/file1.yml  src/test/resources/fixtures/file2.yml"
 
 .PHONY:
 	build
