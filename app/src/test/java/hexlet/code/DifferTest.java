@@ -25,7 +25,7 @@ public class DifferTest {
     public void testJsonToStylish() throws Exception {
         var file1 = getFixturePath("file1.json").toString();
         var file2 = getFixturePath("file2.json").toString();
-        var expected = readFixture("expectedStylish");
+        var expected = readFixture("expected.stylish");
         assertEquals(expected, Differ.generate(file1, file2, "stylish"));
     }
 
@@ -33,7 +33,7 @@ public class DifferTest {
     public void testYmlToStylish() throws Exception {
         var file1 = getFixturePath("file1.yml").toString();
         var file2 = getFixturePath("file2.yml").toString();
-        var expected = readFixture("expectedStylish");
+        var expected = readFixture("expected.stylish");
         assertEquals(expected, Differ.generate(file1, file2, "stylish"));
     }
 
@@ -41,7 +41,7 @@ public class DifferTest {
     public void testJsonToPlain() throws Exception {
         var file1 = getFixturePath("file1.json").toString();
         var file2 = getFixturePath("file2.json").toString();
-        var expected = readFixture("expectedPlain");
+        var expected = readFixture("expected.plain");
         assertEquals(expected, Differ.generate(file1, file2, "plain"));
     }
 
@@ -49,7 +49,23 @@ public class DifferTest {
     public void testYmlToPlain() throws Exception {
         var file1 = getFixturePath("file1.yml").toString();
         var file2 = getFixturePath("file2.yml").toString();
-        var expected = readFixture("expectedPlain");
+        var expected = readFixture("expected.plain");
         assertEquals(expected, Differ.generate(file1, file2, "plain"));
+    }
+
+    @Test
+    public void testJsonToJson() throws Exception {
+        var file1 = getFixturePath("file1.json").toString();
+        var file2 = getFixturePath("file2.json").toString();
+        var expected = readFixture("expected.json");
+        assertEquals(expected, Differ.generate(file1, file2, "json"));
+    }
+
+    @Test
+    public void testYmlToJson() throws Exception {
+        var file1 = getFixturePath("file1.yml").toString();
+        var file2 = getFixturePath("file2.yml").toString();
+        var expected = readFixture("expected.json");
+        assertEquals(expected, Differ.generate(file1, file2, "json"));
     }
 }

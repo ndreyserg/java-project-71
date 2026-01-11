@@ -9,7 +9,7 @@ public final class CompareResultItem {
 
     public static final String REMOVED_TYPE = "removed";
     public static final String ADDED_TYPE = "added";
-    public static final String UNCHANGED_TYPE = "";
+    public static final String UNCHANGED_TYPE = "unchanged";
     public static final String MODIFIED_TYPE = "modified";
 
     private String type;
