@@ -1,9 +1,13 @@
 package hexlet.code;
 
-import java.util.*;
+import java.util.Objects;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
+import java.util.ArrayList;
 
 
-public class Comparator {
+public final class Comparator {
 
     public static List<CompareResultItem> compare(Map<String, Object> map1, Map<String, Object> map2) {
         var keys = new TreeSet<String>(map1.keySet());

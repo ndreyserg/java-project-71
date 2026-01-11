@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class CompareResultItem {
+public final class CompareResultItem {
     private String key;
     private Object value;
     private String type;

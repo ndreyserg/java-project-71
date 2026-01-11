@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-public class Differ {
+public final class Differ {
     public static String generate(String filepath1, String filepath2) throws Exception {
         var fileContent1 = getFileContent(filepath1);
         var fileContent2 = getFileContent(filepath2);
