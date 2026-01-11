@@ -7,23 +7,29 @@ import lombok.Getter;
 @Getter
 public final class CompareResultItem {
 
-    public static final String REMOVED_TYPE = "-";
-    public static final String ADDED_TYPE = "+";
-    public static final String UNCHANGED_TYPE = " ";
+    public static final String REMOVED_TYPE = "removed";
+    public static final String ADDED_TYPE = "added";
+    public static final String UNCHANGED_TYPE = "";
+    public static final String MODIFIED_TYPE = "modified";
 
+    private String type;
     private String key;
     private Object value;
-    private String type;
+    private Object oldValue;
 
     public static CompareResultItem createRemovedItem(String key, Object value) {
-        return new CompareResultItem(key, value, REMOVED_TYPE);
+        return new CompareResultItem(REMOVED_TYPE, key, value, null);
     }
 
     public static CompareResultItem createAddedItem(String key, Object value) {
-        return new CompareResultItem(key, value, ADDED_TYPE);
+        return new CompareResultItem(ADDED_TYPE, key, value, null);
     }
 
     public static CompareResultItem createUnchangedItem(String key, Object value) {
-        return new CompareResultItem(key, value, UNCHANGED_TYPE);
+        return new CompareResultItem(UNCHANGED_TYPE, key, value, null);
+    }
+
+    public static CompareResultItem createModifiedItem(String key, Object value, Object oldValue) {
+        return new CompareResultItem(MODIFIED_TYPE, key, value, oldValue);
     }
 }

@@ -4,13 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import hexlet.code.Formatter.Formatter;
 
 public final class Differ {
     public static String generate(String filepath1, String filepath2, String outputFormat) throws Exception {
-
-        System.out.println(outputFormat);
-
         var fileContent1 = getFileContent(filepath1);
         var fileType1 = getFileType(filepath1);
 
@@ -22,6 +18,10 @@ public final class Differ {
         var compareResult = Comparator.compare(map1, map2);
         var formatter = Formatter.of(outputFormat);
         return formatter.format(compareResult);
+    }
+
+    public static String generate(String filepath1, String filepath2) throws Exception {
+        return generate(filepath1, filepath2, "stylish");
     }
 
 

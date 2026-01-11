@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public final class Comparator {
 
     public static List<CompareResultItem> compare(Map<String, Object> map1, Map<String, Object> map2) {
-        var keys = new TreeSet<String>(map1.keySet());
+        var keys = new TreeSet<>(map1.keySet());
         keys.addAll(map2.keySet());
 
         var result = new ArrayList<CompareResultItem>();
@@ -30,8 +30,7 @@ public final class Comparator {
                 result.add(CompareResultItem.createUnchangedItem(key, map1.get(key)));
                 continue;
             }
-            result.add(CompareResultItem.createRemovedItem(key, map1.get(key)));
-            result.add(CompareResultItem.createAddedItem(key, map2.get(key)));
+            result.add(CompareResultItem.createModifiedItem(key, map2.get(key), map1.get(key)));
         }
         return result;
     }

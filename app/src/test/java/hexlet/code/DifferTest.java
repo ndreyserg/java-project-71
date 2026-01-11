@@ -36,4 +36,20 @@ public class DifferTest {
         var expected = readFixture("expectedStylish");
         assertEquals(expected, Differ.generate(file1, file2, "stylish"));
     }
+
+    @Test
+    public void testJsonToPlain() throws Exception {
+        var file1 = getFixturePath("file1.json").toString();
+        var file2 = getFixturePath("file2.json").toString();
+        var expected = readFixture("expectedPlain");
+        assertEquals(expected, Differ.generate(file1, file2, "plain"));
+    }
+
+    @Test
+    public void testYmlToPlain() throws Exception {
+        var file1 = getFixturePath("file1.yml").toString();
+        var file2 = getFixturePath("file2.yml").toString();
+        var expected = readFixture("expectedPlain");
+        assertEquals(expected, Differ.generate(file1, file2, "plain"));
+    }
 }
