@@ -2,6 +2,7 @@ plugins {
     application
     checkstyle
     jacoco
+    id("org.sonarqube") version "7.2.2.6593"
 }
 
 group = "hexlet.code"
@@ -35,4 +36,16 @@ tasks.test {
 
 tasks.jacocoTestReport {
     dependsOn(tasks.test) // tests are required to run before generating the report
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        csv.required.set(false)
+    }
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "ndreyserg_java-project-71")
+        property("sonar.organization", "ndreyserg")
+    }
 }
