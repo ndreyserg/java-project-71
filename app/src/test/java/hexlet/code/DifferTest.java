@@ -26,7 +26,7 @@ public class DifferTest {
         var file1 = getFixturePath("file1.json").toString();
         var file2 = getFixturePath("file2.json").toString();
         var expected = readFixture("expectedStylish");
-        assertEquals(expected, Differ.generate(file1, file2));
+        assertEquals(expected, Differ.generate(file1, file2, "stylish"));
     }
 
     @Test
@@ -34,6 +34,6 @@ public class DifferTest {
         var file1 = getFixturePath("file1.yml").toString();
         var file2 = getFixturePath("file2.yml").toString();
         var expected = readFixture("expectedStylish");
-        assertEquals(expected, Differ.generate(file1, file2));
+        assertEquals(expected, Differ.generate(file1, file2, "stylish"));
     }
 }
