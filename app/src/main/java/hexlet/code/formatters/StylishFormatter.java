@@ -32,7 +32,7 @@ public final class StylishFormatter implements Formatter {
             case CompareResultItem.ADDED_TYPE -> "+";
             case CompareResultItem.REMOVED_TYPE -> "-";
             case CompareResultItem.UNCHANGED_TYPE -> " ";
-            default -> "";
+            default -> throw new RuntimeException("Unknown operator" + operation);
         };
     }
 }

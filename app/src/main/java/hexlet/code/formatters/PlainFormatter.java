@@ -24,7 +24,7 @@ public final class PlainFormatter implements Formatter {
                     "Property '%s' was updated. From %s to %s", item.getKey(),
                     formatItemValue(item.getOldValue()), formatItemValue(item.getValue())
             );
-            default -> throw new IllegalArgumentException("Unknown compare result type: " + item.getType());
+            default -> throw new RuntimeException("Unknown compare result type: " + item.getType());
         };
     }
 
